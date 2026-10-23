@@ -29,9 +29,12 @@ RUN composer install \
        /var/www/html/casino/storage/framework/views \
        /var/www/html/casino/storage/logs \
        /var/www/html/casino/bootstrap/cache \
+    && touch /var/www/html/casino/.env \
     && chown -R www-data:www-data \
+       /var/www/html/casino/.env \
        /var/www/html/casino/storage \
        /var/www/html/casino/bootstrap/cache \
+    && chmod 664 /var/www/html/casino/.env \
     && chmod -R ug+rwX \
        /var/www/html/casino/storage \
        /var/www/html/casino/bootstrap/cache
